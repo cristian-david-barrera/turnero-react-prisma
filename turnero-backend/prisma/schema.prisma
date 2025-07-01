@@ -1,0 +1,30 @@
+// prisma/schema.prisma
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Usuario {
+  dni          Int     @id
+  nombre       String? @db.VarChar
+  apellido     String? @db.VarChar
+  fecha        String? @db.VarChar
+  numeroTurno  String? @db.VarChar @map("numero_turno")
+  atendido     Boolean @default(false)
+  createdAt    DateTime @default(now()) @map("created_at")
+  
+  @@map("usuario")
+}
+model TurnoMesaEntrada {
+  id          Int      @id @default(autoincrement())
+  dni         Int
+  numeroTurno String   @db.VarChar @map("numero_turno")
+  atendido    Boolean  @default(false)
+  createdAt   DateTime @default(now()) @map("created_at")
+  
+  @@map("turno_mesa_entrada")
+}

@@ -1,0 +1,21 @@
+.App {
+  text-align: center;
+  font-family: sans-serif;
+  background-color: #f2f2f2;
+  min-height: 100vh;
+ 
+}
+
+.app-header {
+  margin-bottom: 2rem;
+}
+
+.logo {
+  max-width: 500px;
+  height: auto;
+}
+header{
+  text-align: center;
+  background-color:  #8135de;
+  width: 100%;
+}
