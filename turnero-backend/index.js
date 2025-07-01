@@ -9,7 +9,7 @@ const PORT = 3001;
 app.use(cors());
 app.use(express.json());
 
-// Endpoint para buscar si el DNI tiene turno.
+// Endpoint para buscar si el DNI tiene turno
 app.get("/api/turnos/:dni", async (req, res) => {
   const { dni } = req.params;
 
